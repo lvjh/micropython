@@ -71,7 +71,14 @@ STATIC mp_uint_t fdfile_read(mp_obj_t o_in, void *buf, mp_uint_t size, int *errc
     check_fd_is_open(o);
     mp_int_t r = read(o->fd, buf, size);
     if (r == -1) {
-        *errcode = errno;
+        if (errno == EINTR && MP_STATE_VM(mp_pending_exception) == MP_STATE_VM(keyboard_interrupt_obj)) {
+            // User pressed Control-C. We return no bytes read so that the
+            // vm will get around to checking mp_pending_exception and raising
+            // a KeyboardInterrupt
+
+            return 0;
+        }
+        *errcode = errno; 
         return MP_STREAM_ERROR;
     }
     return r;
