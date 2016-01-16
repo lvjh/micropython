@@ -306,7 +306,7 @@ void mp_parse_node_print(mp_parse_node_t pn, size_t indent) {
             printf("literal bytes(%.*s)\n", (int)pns->nodes[1], (char*)pns->nodes[0]);
         } else if (MP_PARSE_NODE_STRUCT_KIND(pns) == RULE_const_object) {
             #if MICROPY_OBJ_REPR == MICROPY_OBJ_REPR_D
-            printf("literal const(%016llx)\n", (uint64_t)pns->nodes[0] | ((uint64_t)pns->nodes[1] << 32));
+            printf("literal const(%016lx)\n", (uint64_t)pns->nodes[0] | ((uint64_t)pns->nodes[1] << 32));
             #else
             printf("literal const(%p)\n", (mp_obj_t)pns->nodes[0]);
             #endif

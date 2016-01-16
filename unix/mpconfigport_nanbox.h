@@ -37,7 +37,7 @@
 
 typedef int64_t mp_int_t;
 typedef uint64_t mp_uint_t;
-#define UINT_FMT "%llu"
-#define INT_FMT "%lld"
+#define UINT_FMT "%lu"
+#define INT_FMT "%ld"
 
 #include <mpconfigport.h>
