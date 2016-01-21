@@ -33,7 +33,7 @@
 #define MICROPY_EMIT_X64            (0)
 #define MICROPY_EMIT_X86            (0)
 #define MICROPY_EMIT_THUMB          (0)
-#define MICROPY_EMIT_INLINE_THUMB   (0)
+#define MICROPY_EMIT_INLINE_THUMB   (1)
 #define MICROPY_EMIT_INLINE_THUMB_ARMV7M (1)
 #define MICROPY_EMIT_INLINE_THUMB_FLOAT (1)
 #define MICROPY_EMIT_ARM            (0)
