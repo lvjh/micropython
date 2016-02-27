@@ -498,3 +498,7 @@ Q(mem)
 Q(mem8)
 Q(mem16)
 Q(mem32)
+
+Q(c_sample)
+Q(set_callback)
+Q(call_callback)
